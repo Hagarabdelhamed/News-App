@@ -36,15 +36,26 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-             CategoryListView(),
-             Expanded(child: NewsListView()),
-          ],
-        ),
+      body: const CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(child: CategoryListView()),
+          SliverToBoxAdapter(child: NewsListView()),
+        ],
       ),
+      
+      
+      
+      
+      
+      //const Padding(
+      //   padding: EdgeInsets.all(8.0),
+      //   child: Column(
+      //     children: [
+      //        
+      //        Expanded(child: NewsListView()),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }
