@@ -1,7 +1,8 @@
 class NewsModel
 {
   final String image;
-  final String text;
+  final String title;
+  final String subTitle;
 
-  const NewsModel( {required this.image,required this.text,});
+  const NewsModel(  {required this.image,required this.title,required this.subTitle,});
 }

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/models/NewsModel.dart';
+import 'package:news_app/models/CategoryModel.dart';
 
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({super.key, required this.model});
-  final NewsModel model;
+  final CategoryModel model;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(  
       children: [
         Padding(
-          padding: const EdgeInsets.only (right :8.0),
+          padding: const EdgeInsets.only (right: 8),
           child: Container(
             height: 140,
             width: 250,

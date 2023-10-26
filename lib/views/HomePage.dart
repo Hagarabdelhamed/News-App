@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/Widget/CategoryListView.dart';
 import 'package:news_app/Widget/CategoryWidget.dart';
-import 'package:news_app/models/NewsModel.dart';
+import 'package:news_app/models/CategoryModel.dart';
+
+import '../Widget/NewsListView.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +36,15 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: const CategoryListView(),
+      body: const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+             CategoryListView(),
+             Expanded(child: NewsListView()),
+          ],
+        ),
+      ),
     );
   }
 }
