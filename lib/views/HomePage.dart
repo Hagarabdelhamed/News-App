@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/Widget/CategoryListView.dart';
 import 'package:news_app/Widget/CategoryWidget.dart';
+import 'package:news_app/Widget/NewsColumn.dart';
 import 'package:news_app/models/CategoryModel.dart';
 
 import '../Widget/NewsListView.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -36,22 +36,22 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: const CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(child: CategoryListView()),
-          SliverToBoxAdapter(child: NewsListView()),
-        ],
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal:15 ,vertical:0 ),
+        child: CustomScrollView(
+          physics: BouncingScrollPhysics(),
+          slivers: [
+            SliverToBoxAdapter(child: CategoryListView()),
+            NewsListView(),
+          ],
+        ),
       ),
-      
-      
-      
-      
-      
+
       //const Padding(
       //   padding: EdgeInsets.all(8.0),
       //   child: Column(
       //     children: [
-      //        
+      //
       //        Expanded(child: NewsListView()),
       //     ],
       //   ),
