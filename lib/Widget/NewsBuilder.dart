@@ -6,16 +6,9 @@ import '../models/NewsModel.dart';
 import '../services/newsServices.dart';
 import 'NewsListView.dart';
 
-class NewsBuilder extends StatefulWidget {
-  const NewsBuilder({
-    super.key,
-  });
+class NewsBuilder extends StatelessWidget {
+  const NewsBuilder({super.key});
 
-  @override
-  State<NewsBuilder> createState() => _NewsBuilderState();
-}
-
-class _NewsBuilderState extends State<NewsBuilder> {
 
 
   @override
@@ -30,5 +23,14 @@ class _NewsBuilderState extends State<NewsBuilder> {
     );
 
 
+
+
+    // return isLoading ? const SliverToBoxAdapter(
+    //   child: Padding(
+    //     padding: EdgeInsets.only(top : 220),
+    //     child: Center(child: CircularProgressIndicator()),
+    //   )) : article.isEmpty ? const SliverToBoxAdapter(child: SizedBox(height: 500,child:Center(child: Text('NO CONTENT TO APPEAR' ,
+    //   style: TextStyle(fontWeight: FontWeight.bold , fontSize: 30 , color: Colors.amber,decoration: TextDecoration.underline ,),))),)
+    //   : NewsListView(article: article,);
   }
 }
