@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:news_app/models/NewsModel.dart';
 
 class NewsColumn extends StatelessWidget {
-  const NewsColumn({super.key, required this.column});
-   final NewsModel column;
+  const NewsColumn({super.key, required this.articles});
+
+   final NewsModel articles;
   @override
   Widget build(BuildContext context) {
     return  Padding(
@@ -12,12 +13,12 @@ class NewsColumn extends StatelessWidget {
         children: [
          ClipRRect
          (borderRadius: BorderRadius.circular(10),
-          child: Image.asset(column.image),
+          child: Image.network(articles.image ?? "https://images.app.goo.gl/outLy6Gog9mVAHKD9"),
          ),
            Column(
           
           children: [
-            Text(column.title ,
+            Text(articles.title ,
             style: const TextStyle(
               overflow: TextOverflow.ellipsis,
               fontSize: 20,
@@ -25,7 +26,7 @@ class NewsColumn extends StatelessWidget {
              ),
              maxLines: 2,  
             ),
-             Text(column.subTitle,
+             Text(articles.subTitle ?? " ",
             style: const TextStyle(
               overflow: TextOverflow.ellipsis,
               fontSize: 15,

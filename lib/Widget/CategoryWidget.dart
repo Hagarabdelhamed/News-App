@@ -17,12 +17,12 @@ class CategoryWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage(model.image),
+                image: AssetImage(model.image!),
               ),
             ),
             child: Center(
                 child: Text(
-              model.text,
+              model.text!,
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
