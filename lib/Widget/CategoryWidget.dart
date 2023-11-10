@@ -11,7 +11,7 @@ class CategoryWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only (right: 8),
           child: Container(
-            height: 140,
+            height: 120,
             width: 250,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
