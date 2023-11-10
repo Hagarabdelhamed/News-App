@@ -17,30 +17,18 @@ class NewsBuilder extends StatefulWidget {
 
 class _NewsBuilderState extends State<NewsBuilder> {
 
-  
-  List<NewsModel> article = [];
-  bool isLoading = true ;
-
-  @override
-  void initState()  {
-    super.initState();
-     getGenNews();
-  }
-
-  Future<void> getGenNews() async{
-   article = await NewsServices(Dio()).getGeneralNews();
-   isLoading =false;
-   setState(() {});
-   }
 
   @override
   Widget build(BuildContext context) {
-    return isLoading ? const SliverToBoxAdapter(
-      child: Padding(
-        padding: EdgeInsets.only(top : 220),
-        child: Center(child: CircularProgressIndicator()),
-      )) : article.isEmpty ? const SliverToBoxAdapter(child: SizedBox(height: 500,child:Center(child: Text('NO CONTENT TO APPEAR' ,
-      style: TextStyle(fontWeight: FontWeight.bold , fontSize: 30 , color: Colors.amber,decoration: TextDecoration.underline ,),))),)
-      : NewsListView(article: article,);
+
+    return FutureBuilder(
+      future: NewsServices(Dio()).getGeneralNews(),
+      builder:(context , SnapShot)
+      {
+        return NewsListView(article: SnapShot.data ?? [] ); 
+      }
+    );
+
+
   }
 }
