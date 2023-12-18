@@ -6,8 +6,8 @@ import 'package:news_app/services/newsServices.dart';
 import '../models/NewsModel.dart';
 
 class NewsListView extends StatefulWidget {
-  const NewsListView({super.key});
-
+  const NewsListView({super.key, required this.category});
+  final String category;
   @override
   State<NewsListView> createState() => _NewsListViewState();
 
@@ -25,7 +25,7 @@ class _NewsListViewState extends State<NewsListView> {
   }
 
   Future<void> getGeneralNews() async{
-   article = await NewsServices(Dio()).getGeneralNews();
+   article = await NewsServices(Dio()).getTopHeadline( categoryy: 'general');
    isLoading =false;
    setState(() {});
    }
